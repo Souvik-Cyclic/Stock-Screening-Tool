@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Navbar.css';
 import logo from '../assets/images/logo.svg';
 import userLogo from '../assets/images/user.svg'; 
+import downArrow from '../assets/images/down-arrow.svg';
 import SearchBar from './SearchBar';
 
 function Navbar() {
@@ -53,7 +54,7 @@ function Navbar() {
                             }}
                         >
                             TOOLS
-                            <span className='dropdown-arrow'></span>
+                            <img src={downArrow} alt='Dropdown arrow' className='dropdown-arrow'/>
                         </a>
                         {isToolDropdownOpen && (
                             <ul className='dropdown-menu-tool'>
@@ -82,7 +83,7 @@ function Navbar() {
                 >
                     <img src={userLogo} alt='user' className='user-logo'/>
                     SOUVIK
-                    <span className='dropdown-arrow'></span>
+                    <img src={downArrow} alt='Dropdown arrow' className='dropdown-arrow'/>
                 </a>
                 </button>
                 {isUserDropdownOpen && (
