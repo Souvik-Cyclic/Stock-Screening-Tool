@@ -1,0 +1,39 @@
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.run-query-btn {
+    background-color: #645df9;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.run-query-btn:hover {
+    opacity: 0.9;
+}
+
+.show-ratios-btn {
+    background-color: white;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.show-ratios-btn:hover {
+    background-color: #f9fafb;
+}

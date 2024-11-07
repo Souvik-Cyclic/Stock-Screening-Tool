@@ -1,0 +1,21 @@
+.navigation-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 32px;
+    margin-top: 24px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #6b7280;
+    text-decoration: none;
+    margin-left: auto;
+    gap: 8px;
+}
+
+.back-link:hover {
+    color: #4b5563;
+}
