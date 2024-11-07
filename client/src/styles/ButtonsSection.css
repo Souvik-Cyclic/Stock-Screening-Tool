@@ -11,10 +11,12 @@
     padding: 12px 24px;
     border-radius: 6px;
     cursor: pointer;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 8px;
+    letter-spacing: 0.7px;
 }
 
 .run-query-btn:hover {
@@ -23,12 +25,13 @@
 
 .show-ratios-btn {
     background-color: white;
-    color: #6b7280;
+    color: #4b5563;
     border: 1px solid #d1d5db;
     padding: 12px 24px;
     border-radius: 6px;
     cursor: pointer;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -36,4 +39,9 @@
 
 .show-ratios-btn:hover {
     background-color: #f9fafb;
+    color: #625afc;
+}
+
+.show-ratios-text{
+    letter-spacing: 0.7px;
 }
