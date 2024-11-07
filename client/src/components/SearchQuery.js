@@ -8,14 +8,12 @@ function SearchQuery() {
       <div className="query-container">
         <textarea
           className="query-input"
-          placeholder="Enter your search query here"
         ></textarea>
-
         <div className="example-box">
-          <h3>Custom query example</h3>
+            <h4>Custom query example</h4>
           <div className="example-text">
             Market capitalization &gt; 500 AND<br />
-            Price to earnings &lt; 15 AND<br />
+            Price to earning &lt; 15 AND<br />
             Return on capital employed &gt; 22%
           </div>
           <a href="/" className="guide-link">

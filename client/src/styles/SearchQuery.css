@@ -10,14 +10,14 @@
 
 .query-container {
     display: flex;
-    gap: 32px;
+    gap: 20px;
 }
 
 .query-input {
     flex: 1.2;
     min-height: 160px;
     padding: 16px;
-    border: 1px solid #e0e0e0;
+    border: 2px solid #ebebeb;
     border-radius: 8px;
     font-family: inherit;
     font-size: 14px;
@@ -30,18 +30,21 @@
     background-color: #f6fafd;
     border-radius: 8px;
     padding: 24px;
+    border: 1px solid #abd1f6;
 }
 
-.example-box h3 {
+.example-box h4 {
     font-size: 16px;
     margin: 0 0 16px 0;
-    color: #333;
+    color: #22222f;
+    font-weight: normal;
 }
 
 .example-text {
     font-size: 14px;
     line-height: 1.6;
-    color: #333;
+    background-color: #f6fafd;
+    color: #22222f;
     margin-bottom: 16px;
     padding-left: 12px;
 }

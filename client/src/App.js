@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <div className="main-container">
         <div className="container">
-          <h1>Create a Search Query</h1>
+          <h3>Create a Search Query</h3>
           <SearchQuery />
           <CheckboxSection />
           <ButtonsSection />

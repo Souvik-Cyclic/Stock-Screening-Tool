@@ -6,4 +6,5 @@
   
   .checkbox-container input[type="checkbox"] {
     margin-right: 8px;
+    accent-color: #005cc8;
   }
