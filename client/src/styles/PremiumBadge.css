@@ -1,0 +1,21 @@
+.premium-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #EEF2FF;
+    padding: 2px 8px;
+    border-radius: 4px;
+    right: 0;
+}
+
+.premium-badge .premium-icon {
+    color: #625afc;
+    width: 14px;
+    height: 14px;
+}
+
+.premium-badge span {
+    color: #625afc;
+    font-size: 12px;
+    font-weight: 500;
+}
