@@ -109,7 +109,17 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-.dropdown-link:hover {
+.dropdown-link-user {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.dropdown-link:hover, .dropdown-link-user:hover {
   background-color: #f1f1f1;
 }
 
@@ -145,5 +155,11 @@ body {
 
 .user-logo{
   height: 18px;
+  margin-right: 7px;
+}
+
+.user-dropdown-images{
+  height: 14px;
+  width: 16px;
   margin-right: 7px;
 }

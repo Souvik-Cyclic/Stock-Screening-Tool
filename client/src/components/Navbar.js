@@ -3,6 +3,11 @@ import '../styles/Navbar.css';
 import logo from '../assets/images/logo.svg';
 import userLogo from '../assets/images/user.svg'; 
 import downArrow from '../assets/images/down-arrow.svg';
+import profileLogo from '../assets/images/profile.svg';
+import alertLogo from '../assets/images/alert.svg'
+import notebookLogo from '../assets/images/notebook.svg'
+import crownLogo from '../assets/images/crown.svg'
+import logoutLogo from '../assets/images/logout.svg'
 import SearchBar from './SearchBar';
 
 function Navbar() {
@@ -88,11 +93,36 @@ function Navbar() {
                 </button>
                 {isUserDropdownOpen && (
                     <ul className='dropdown-menu-user'>
-                        <li><a href='/' className='dropdown-link'>Profile</a></li>
-                        <li><a href='/' className='dropdown-link'>Alerts</a></li>
-                        <li><a href='/' className='dropdown-link'>Notebook</a></li>
-                        <li><a href='/' className='dropdown-link'>Upgrade</a></li>
-                        <li><a href='/' className='dropdown-link'>Logout</a></li>
+                        <li>
+                            <a href='/' className='dropdown-link-user'>
+                                <img src={profileLogo} alt='profile' className='user-dropdown-images'/>
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href='/' className='dropdown-link-user'>
+                                <img src={alertLogo} alt='alert' className='user-dropdown-images'/>
+                                Alerts
+                            </a>
+                        </li>
+                        <li>
+                            <a href='/' className='dropdown-link-user'>
+                                <img src={notebookLogo} alt='notebook' className='user-dropdown-images'/>
+                                Notebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href='/' className='dropdown-link-user'>
+                                <img src={crownLogo} alt='crown' className='user-dropdown-images'/>
+                                Upgrade
+                            </a>
+                        </li>
+                        <li>
+                            <a href='/' className='dropdown-link-user'>
+                                <img src={logoutLogo} alt='logout' className='user-dropdown-images'/>
+                                Logout
+                            </a>
+                        </li>
                     </ul>
                 )}
             </div>
