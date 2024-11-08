@@ -249,7 +249,7 @@ func handleFilter(c *gin.Context) {
 
 func handleHealth(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"status": "healthy",
+		"message": "Backend is alive",
 	})
 }
 
@@ -273,11 +273,16 @@ func main() {
 	})
 
 	//Endpoints
-	router.GET("/health", handleHealth)
+	router.GET("/", handleHealth)
 	router.POST("/filter", handleFilter)
 
-	fmt.Println("Server starting on :8080...")
-	if err := router.Run(":8080"); err != nil {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	fmt.Printf("Server starting on :%s...\n", port)
+	if err := router.Run(":" + port); err != nil {
 		fmt.Printf("Error starting server: %v\n", err)
 	}
 }
