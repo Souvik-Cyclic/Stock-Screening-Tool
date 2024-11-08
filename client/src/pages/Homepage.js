@@ -1,5 +1,5 @@
 import React from "react";
-import '../pages/Homepage.css';
+import './Homepage.css';
 import Navbar from "../components/Navbar";
 import SearchQuery from "../components/SearchQuery";
 import CheckboxSection from "../components/CheckboxSection";
