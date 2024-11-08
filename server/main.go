@@ -281,7 +281,7 @@ func main() {
 		port = "8080"
 	}
 
-	fmt.Printf("Server starting on :%s...\n", port)
+	fmt.Printf("Server starting on :%s \n", port)
 	if err := router.Run(":" + port); err != nil {
 		fmt.Printf("Error starting server: %v\n", err)
 	}
