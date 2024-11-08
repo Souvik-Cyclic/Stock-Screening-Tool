@@ -2,25 +2,113 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 .results-container {
-    height: 100vh;
     overflow-y: auto;
+    max-height: calc(100vh - 60px);
     padding: 20px;
     box-sizing: border-box;
 }
 
 h2 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-pre {
-    background-color: #f4f4f4;
-    padding: 10px;
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.button {
+    background-color: #7367f0;
+    color: white;
+    padding: 8px 12px;
+    border: none;
     border-radius: 5px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #5c5fef;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.results-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    cursor: pointer;
+    color: #7367f0;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.results-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination button {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.pagination button.active {
+    background-color: #7367f0;
+    color: white;
+}
+
+.results-per-page {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.results-per-page span {
+    font-weight: bold;
+}
+
+.results-per-page button {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.results-per-page button.active {
+    background-color: #7367f0;
+    color: white;
 }
