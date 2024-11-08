@@ -18,11 +18,11 @@ function SearchQuery({ query, setQuery }) {
         <div className="example-box">
           <h4>Custom query example</h4>
           <div className="example-text">
-            Market capitalization &gt; 500 AND
+            Market capitalization &gt; 100 AND
             <br />
-            Price to earning &lt; 15 AND
+            Price to earning &lt; 10 AND
             <br />
-            Return on capital employed &gt; 22%
+            Return on capital employed &gt; 10%
           </div>
           <a href="/" className="guide-link">
             Detailed guide on creating screens
