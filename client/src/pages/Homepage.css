@@ -1,0 +1,28 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background-color: #eef2f5;
+}
+
+h3{
+    font-weight: normal;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: calc(100vh - 60px);
+    margin-top: -40px;
+}
+
+.container {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 32px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+}
