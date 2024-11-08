@@ -1,10 +1,37 @@
-import React from 'react';
-import '../styles/ButtonsSection.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/ButtonsSection.css";
 
-function ButtonsSection() {
+function ButtonsSection({ query }) {
+  const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:8080/filter";
+  
+  const handleRunQuery = async () => {
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch results");
+      }
+
+      const resultData = await response.json();
+
+      navigate("/results", { state: { data: resultData } });
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while fetching results");
+    }
+  };
+
   return (
     <div className="button-container">
-      <button className="run-query-btn">
+      <button className="run-query-btn" onClick={handleRunQuery}>
         <svg
           width="16"
           height="16"
