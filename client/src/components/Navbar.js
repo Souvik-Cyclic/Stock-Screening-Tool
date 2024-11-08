@@ -8,6 +8,10 @@ import alertLogo from '../assets/images/alert.svg'
 import notebookLogo from '../assets/images/notebook.svg'
 import crownLogo from '../assets/images/crown.svg'
 import logoutLogo from '../assets/images/logout.svg'
+import stockScreenLogo from '../assets/images/stockScreen.svg'
+import announcementLogo from '../assets/images/announcements.svg'
+import commodityLogo from '../assets/images/commodity.svg'
+import shareHolderLogo from '../assets/images/shareholders.svg'
 import SearchBar from './SearchBar';
 
 function Navbar() {
@@ -62,12 +66,48 @@ function Navbar() {
                             <img src={downArrow} alt='Dropdown arrow' className='dropdown-arrow'/>
                         </a>
                         {isToolDropdownOpen && (
-                            <ul className='dropdown-menu-tool'>
-                                <li><a href='/' className='dropdown-link'>Create a stock screen</a></li>
-                                <li><a href='/' className='dropdown-link'>Commodity Prices</a></li>
-                                <li><a href='/' className='dropdown-link'>Search shareholders</a></li>
-                                <li><a href='/' className='dropdown-link'>Latest Announcements</a></li>
-                                <li><button className='dropdown-button'>Upgrade to Premium</button></li>
+                            <ul className={`dropdown-menu-tool ${isToolDropdownOpen ? 'open' : ''}`}>
+                                <li>
+                                    <a href='/' className='dropdown-link'>
+                                        Create a stock screen
+                                        <p className='tool-description'>
+                                            <img src={stockScreenLogo} alt='stock screen' className='tool-dropdown-image'/>
+                                            Run queries on 10 years of financial data
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='/' className='dropdown-link'>
+                                        Commodity Prices
+                                        <p className='tool-description'>
+                                            <img src={commodityLogo} alt='commodity' className='tool-dropdown-image'/>
+                                            See prices and trends of over 10,000 commodities
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='/' className='dropdown-link'>
+                                        Search shareholders
+                                        <p className='tool-description'>
+                                            <img src={shareHolderLogo} alt='shareholder' className='tool-dropdown-image'/>
+                                            See companies where a person holds over 1% of the shares
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='/' className='dropdown-link'>
+                                        Latest Announcements
+                                        <p className='tool-description'>
+                                            <img src={announcementLogo} alt='announcement' className='tool-dropdown-image'/>
+                                            Browse, filter and set alerts for announcements.
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <button className='dropdown-button'>
+                                        Upgrade to Premium
+                                    </button>
+                                </li>
                             </ul>
                         )}
                     </li>
