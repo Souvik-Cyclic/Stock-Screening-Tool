@@ -8,6 +8,7 @@ import editLogo from "../assets/images/edit.svg";
 import exportLogo from "../assets/images/export.svg";
 import filterLogo from "../assets/images/filter.svg";
 import cloudLogo from "../assets/images/cloud.svg";
+import Footer from "../components/Footer";
 
 function ResultPage() {
   const location = useLocation();
@@ -210,6 +211,7 @@ function ResultPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
