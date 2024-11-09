@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/ButtonsSection.css";
 
 function ButtonsSection({ query }) {
   const navigate = useNavigate();
   const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:8080/filter";
-  
+  const [notification, setNotification] = useState("");
+
+  const showNotification = (message) => {
+    setNotification(message);
+    setTimeout(() => {
+      setNotification("");
+    }, 3000);
+  };
+
   const handleRunQuery = async () => {
+    if (!query.trim()) {
+      showNotification("Please fill the query field.");
+      return;
+    }
     try {
       const response = await fetch(apiUrl, {
         method: "POST",
@@ -16,21 +28,22 @@ function ButtonsSection({ query }) {
         body: JSON.stringify({ query }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch results");
+      if (response.status === 400) {
+        showNotification("Unknown word: " + query);
+        return;
       }
 
       const resultData = await response.json();
-
       navigate("/results", { state: { data: resultData } });
     } catch (error) {
       console.error("Error:", error);
-      alert("An error occurred while fetching results");
+      showNotification("The backend is currently down. Please try again in 15 seconds.");
     }
   };
 
   return (
     <div className="button-container">
+      {notification && <div className="notify">{notification}</div>}
       <button className="run-query-btn" onClick={handleRunQuery}>
         <svg
           width="16"
