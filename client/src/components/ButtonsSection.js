@@ -34,7 +34,8 @@ function ButtonsSection({ query }) {
       }
 
       const resultData = await response.json();
-      navigate("/results", { state: { data: resultData } });
+      navigate("/results", { state: { data: resultData, refresh: new Date().getTime() } });
+      window.location.reload();
     } catch (error) {
       console.error("Error:", error);
       showNotification("The backend is currently down. Please try again in 15 seconds.");
