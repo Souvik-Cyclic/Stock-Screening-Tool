@@ -4,6 +4,10 @@ import { useLocation } from "react-router-dom";
 import SearchQuery from "../components/SearchQuery";
 import CheckboxSection from "../components/CheckboxSection";
 import ButtonsSection from "../components/ButtonsSection";
+import editLogo from "../assets/images/edit.svg";
+import exportLogo from "../assets/images/export.svg";
+import filterLogo from "../assets/images/filter.svg";
+import cloudLogo from "../assets/images/cloud.svg";
 
 function ResultPage() {
   const location = useLocation();
@@ -11,14 +15,20 @@ function ResultPage() {
   const data = response?.data || [];
 
   const [sortedData, setSortedData] = useState(data);
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: "ascending" });
+  const [sortConfig, setSortConfig] = useState({
+    key: null,
+    direction: "ascending",
+  });
   const [currentPage, setCurrentPage] = useState(1);
   const [resultsPerPage, setResultsPerPage] = useState(10);
 
   const handleSort = (key) => {
     if (key === "Ticker" || key === "S.No") return;
 
-    const direction = sortConfig.key === key && sortConfig.direction === "ascending" ? "descending" : "ascending";
+    const direction =
+      sortConfig.key === key && sortConfig.direction === "ascending"
+        ? "descending"
+        : "ascending";
     const sortedArray = [...sortedData].sort((a, b) => {
       const aValue = parseFloat(a[key].replace(/,/g, "")) || a[key];
       const bValue = parseFloat(b[key].replace(/,/g, "")) || b[key];
@@ -41,37 +51,36 @@ function ResultPage() {
   const getPaginationRange = () => {
     const range = [];
     const maxPagesToShow = 4;
-    
+
     let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
     let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
-  
+
     if (startPage <= 2) {
       startPage = 1;
       endPage = Math.min(totalPages, maxPagesToShow);
     }
-  
+
     if (endPage >= totalPages - 1) {
       endPage = totalPages;
       startPage = Math.max(1, totalPages - maxPagesToShow + 1);
     }
-  
+
     if (startPage > 1) {
       range.push(1);
       if (startPage > 2) range.push("...");
     }
-  
+
     for (let i = startPage; i <= endPage; i++) {
       range.push(i);
     }
-  
+
     if (endPage < totalPages) {
       if (endPage < totalPages - 1) range.push("...");
       range.push(totalPages);
     }
-  
-    return range;
-};
 
+    return range;
+  };
 
   const handleResultsPerPageChange = (value) => {
     setResultsPerPage(value);
@@ -83,16 +92,36 @@ function ResultPage() {
   return (
     <div className="main-div">
       <div className="results-container">
-        <h2>Query Results</h2>
-        <div className="action-buttons">
-          <button className="button">Save This Query</button>
-          <button className="button">Export</button>
-          <button className="button">Edit Columns</button>
-          <button className="button">Industry</button>
+        <div className="header-container">
+          <h1>Query Results</h1>
+          <div className="action-buttons">
+            <div className="button-div-one">
+              <button className="button save-query">
+                <img src={cloudLogo} alt="save" className="button-icon" />
+                SAVE THIS QUERY
+              </button>
+            </div>
+            <div className="button-div-two">
+            <button className="button secondary">
+              <img src={filterLogo} alt="filter" className="button-icon" />
+              INDUSTRY
+            </button>
+            <button className="button secondary">
+              <img src={exportLogo} alt="export" className="button-icon" />
+              EXPORT
+            </button>
+            <button className="button secondary">
+              <img src={editLogo} alt="edit" className="button-icon" />
+              EDIT COLUMNS
+            </button>
+            </div>
+          </div>
         </div>
-
         <div className="results-info">
-          <p>{sortedData.length} results found: Showing page {currentPage} of {totalPages}</p>
+          <p>
+            {sortedData.length} results found: Showing page {currentPage} of{" "}
+            {totalPages}
+          </p>
         </div>
 
         <div className="table-wrapper">
@@ -103,7 +132,11 @@ function ResultPage() {
                 {Object.keys(displayedData[0] || {}).map((key) => (
                   <th key={key} onClick={() => handleSort(key)}>
                     {key}
-                    {sortConfig.key === key ? (sortConfig.direction === "ascending" ? " ▲" : " ▼") : ""}
+                    {sortConfig.key === key
+                      ? sortConfig.direction === "ascending"
+                        ? " ▲"
+                        : " ▼"
+                      : ""}
                   </th>
                 ))}
               </tr>
@@ -123,12 +156,17 @@ function ResultPage() {
 
         <div className="pagination-container">
           <div className="pagination">
-            <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
+            <button
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+            >
               &lt;
             </button>
             {getPaginationRange().map((page, idx) =>
               page === "..." ? (
-                <span key={idx} className="ellipsis">...</span>
+                <span key={idx} className="ellipsis">
+                  ...
+                </span>
               ) : (
                 <button
                   key={page}
@@ -139,7 +177,12 @@ function ResultPage() {
                 </button>
               )
             )}
-            <button onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
+            <button
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+              }
+              disabled={currentPage === totalPages}
+            >
               &gt;
             </button>
           </div>
@@ -159,7 +202,7 @@ function ResultPage() {
         </div>
         <div className="main-container">
           <div className="container">
-            <h3>Search query</h3>
+            <h2>Search query</h2>
             <h5>You can customize the query below:</h5>
             <SearchQuery query={query} setQuery={setQuery} />
             <CheckboxSection />
