@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ResultPage.css";
+import styles from "./ResultPage.module.css";
 import { useLocation } from "react-router-dom";
 import SearchQuery from "../components/SearchQuery";
 import CheckboxSection from "../components/CheckboxSection";
@@ -22,6 +22,7 @@ function ResultPage() {
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [resultsPerPage, setResultsPerPage] = useState(10);
+  const [query, setQuery] = useState("");
 
   const handleSort = (key) => {
     if (key === "Ticker" || key === "S.No") return;
@@ -88,45 +89,42 @@ function ResultPage() {
     setCurrentPage(1);
   };
 
-  const [query, setQuery] = useState("");
-
   return (
-    <div className="main-div">
-      <div className="results-container">
-        <div className="header-container">
+    <div className={styles.mainDiv}>
+      <div className={styles.resultContainer}>
+        <div className={styles.headerContainer}>
           <h1>Query Results</h1>
-          <div className="action-buttons">
-            <div className="button-div-one">
-              <button className="button save-query">
-                <img src={cloudLogo} alt="save" className="button-icon" />
-                SAVE THIS QUERY
+          <div className={styles.actionButtons}>
+            <button className={`${styles.button} ${styles.saveQuery}`}>
+              <img src={cloudLogo} alt="save" className={styles.buttonIcon} />
+              SAVE THIS QUERY
+            </button>
+            <div className={styles.buttonDivTwo}>
+              <button className={`${styles.button} ${styles.secondary}`}>
+                <img src={filterLogo} alt="filter" className={styles.buttonIcon} />
+                INDUSTRY
               </button>
-            </div>
-            <div className="button-div-two">
-            <button className="button secondary">
-              <img src={filterLogo} alt="filter" className="button-icon" />
-              INDUSTRY
-            </button>
-            <button className="button secondary">
-              <img src={exportLogo} alt="export" className="button-icon" />
-              EXPORT
-            </button>
-            <button className="button secondary">
-              <img src={editLogo} alt="edit" className="button-icon" />
-              EDIT COLUMNS
-            </button>
+              <button className={`${styles.button} ${styles.secondary}`}>
+                <img src={exportLogo} alt="export" className={styles.buttonIcon} />
+                EXPORT
+              </button>
+              <button className={`${styles.button} ${styles.secondary}`}>
+                <img src={editLogo} alt="edit" className={styles.buttonIcon} />
+                EDIT COLUMNS
+              </button>
             </div>
           </div>
         </div>
-        <div className="results-info">
+
+        <div className={styles.resultsInfo}>
           <p>
             {sortedData.length} results found: Showing page {currentPage} of{" "}
             {totalPages}
           </p>
         </div>
 
-        <div className="table-wrapper">
-          <table className="results-table">
+        <div className={styles.tableWrapper}>
+          <table className={styles.resultsTable}>
             <thead>
               <tr>
                 <th>S.No</th>
@@ -155,8 +153,8 @@ function ResultPage() {
           </table>
         </div>
 
-        <div className="pagination-container">
-          <div className="pagination">
+        <div className={styles.paginationContainer}>
+          <div className={styles.pagination}>
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
@@ -165,14 +163,12 @@ function ResultPage() {
             </button>
             {getPaginationRange().map((page, idx) =>
               page === "..." ? (
-                <span key={idx} className="ellipsis">
-                  ...
-                </span>
+                <span key={idx} className={styles.ellipsis}>...</span>
               ) : (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
-                  className={currentPage === page ? "active" : ""}
+                  className={currentPage === page ? styles.active : ""}
                 >
                   {page}
                 </button>
@@ -188,21 +184,22 @@ function ResultPage() {
             </button>
           </div>
 
-          <div className="results-per-page">
+          <div className={styles.resultsPerPage}>
             <span>Results per page: </span>
             {[10, 25, 50].map((value) => (
               <button
                 key={value}
                 onClick={() => handleResultsPerPageChange(value)}
-                className={resultsPerPage === value ? "active" : ""}
+                className={resultsPerPage === value ? styles.active : ""}
               >
                 {value}
               </button>
             ))}
           </div>
         </div>
-        <div className="main-container">
-          <div className="container">
+
+        <div className={styles.mainContainer}>
+          <div className={styles.container}>
             <h2>Search query</h2>
             <h5>You can customize the query below:</h5>
             <SearchQuery query={query} setQuery={setQuery} />

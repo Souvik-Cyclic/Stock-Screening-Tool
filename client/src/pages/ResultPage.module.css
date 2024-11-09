@@ -4,7 +4,7 @@ body, html {
     padding: 0;
 }
 
-.main-div {
+.mainDiv {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -14,7 +14,7 @@ body, html {
     padding-bottom: 40px;
 }
 
-.results-container {
+.resultContainer {
     flex-grow: 1;
     padding: 20px;
     box-sizing: border-box;
@@ -23,24 +23,27 @@ body, html {
     margin-left: 5%;
     margin-right: 5%;
     background-color: white;
-    overflow: visible;
 }
 
-.main-container{
-    margin-bottom: -20%;
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
 }
 
-h2 {
-    margin-top: 0;
-    font-weight: normal;
-}
-
-.action-buttons {
+.actionButtons {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     margin-bottom: 15px;
     gap: 12px;
+}
+
+.buttonDivTwo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .button {
@@ -50,42 +53,82 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    transition: all 0.2s;
 }
 
 .button:hover {
     background-color: #5c5fef;
 }
 
-.results-table {
+.button.saveQuery {
+    background-color: #625afc;
+    font-size: 16px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.button.saveQuery:hover {
+    background-color: #635ce7;
+}
+
+.button.secondary {
+    background-color: transparent;
+    color: #6f6f7b;
+    border: 1px solid #e0e0e0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.button.secondary:hover {
+    background-color: #f8f8f8;
+    border-color: #d8d8d8;
+}
+
+.buttonIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.resultsInfo {
+    color: #6f6f7b;
+}
+
+.resultsTable {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 15px;
 }
 
-.results-table th,
-.results-table td {
+.resultsTable th,
+.resultsTable td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
     font-size: 14px;
 }
 
-.results-table th {
+.resultsTable th {
     background-color: #f4f4f4;
     font-weight: bold;
     cursor: pointer;
     color: #7367f0;
 }
 
-.results-table tr:nth-child(even) {
+.resultsTable tr:nth-child(even) {
     background-color: #fafafa;
 }
 
-.results-table tr:hover {
+.resultsTable tr:hover {
     background-color: #f1f1f1;
 }
 
-.pagination-container {
+.paginationContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -111,17 +154,17 @@ h2 {
     color: white;
 }
 
-.results-per-page {
+.resultsPerPage {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.results-per-page span {
+.resultsPerPage span {
     font-weight: bold;
 }
 
-.results-per-page button {
+.resultsPerPage button {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     padding: 5px 10px;
@@ -129,76 +172,16 @@ h2 {
     border-radius: 3px;
 }
 
-.results-per-page button.active {
+.resultsPerPage button.active {
     background-color: #7367f0;
     color: white;
 }
 
-.button-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-}
-
-.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.button.save-query {
-    background-color: #625afc;
-    font-size: 16px;
-    color: white;
-    border: none;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-.button.save-query:hover {
-    background-color: #635ce7;
-}
-
-.button.secondary {
-    background-color: transparent;
-    color: #6f6f7b;
-    border: 1px solid #e0e0e0;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.button.secondary:hover {
-    background-color: #f8f8f8;
-    border-color: #d8d8d8;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-}
-
-.button-div-two{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.button-div-one {
-    margin-left: auto;
-}
-
-.results-info{
+.ellipsis {
+    font-size: 14px;
     color: #6f6f7b;
 }
 
-.container {
-    margin-top: 50px;
-    max-width: 100%;
+h2, h5{
+    font-weight: normal;
 }

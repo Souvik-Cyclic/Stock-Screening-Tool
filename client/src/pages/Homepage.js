@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Homepage.css";
+import styles from "./Homepage.module.css";
 import SearchQuery from "../components/SearchQuery";
 import CheckboxSection from "../components/CheckboxSection";
 import ButtonsSection from "../components/ButtonsSection";
@@ -9,9 +9,9 @@ function Homepage() {
   const [query, setQuery] = useState("");
 
   return (
-    <div className="homepage">
-      <div className="main-container">
-        <div className="container">
+    <div className={styles.homepage}>
+      <div className={styles.mainContainer}>
+        <div className={styles.container}>
           <h3>Create a Search Query</h3>
           <SearchQuery query={query} setQuery={setQuery} />
           <CheckboxSection />
