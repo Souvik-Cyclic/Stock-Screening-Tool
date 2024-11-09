@@ -4,7 +4,8 @@ All credits go to [Screener.in](https://www.screener.in) for creating the origin
 
 A web-based stock screening application that allows users to filter and analyze stocks based on various financial parameters, inspired by [Screener.in](https://www.screener.in). Built with React frontend and Go backend.
 
-Video Demo:
+Video Demo
+
 https://github.com/user-attachments/assets/31968778-2d14-4b4a-b9ee-b0be9a85f5ba
 
 ## 🧪 Testing
