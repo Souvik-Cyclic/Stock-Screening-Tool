@@ -4,11 +4,23 @@ body, html {
     padding: 0;
 }
 
-.results-container {
+.main-div {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: #ebeff5;
     overflow-y: auto;
-    max-height: calc(100vh - 60px);
+}
+
+.results-container {
+    flex-grow: 1;
     padding: 20px;
     box-sizing: border-box;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: white;
+    overflow: visible;
 }
 
 h2 {
