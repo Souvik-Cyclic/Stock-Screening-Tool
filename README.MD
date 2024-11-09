@@ -142,6 +142,12 @@ Accepts screening criteria and returns filtered stocks
 - [SVG Repo](https://www.svgrepo.com/)
 
 ## 📧 Contact
-Souvik Kumar [souvik.cyc@gmail.com](mailto:souvik.cyc@gmail.com)
+Souvik Kumar 
+
+[Mail](mailto:souvik.cyc@gmail.com) 
+
+[GitHub](https://github.com/Souvik-Cyclic) 
+
+[Linkedin](https://www.linkedin.com/in/Souvik-Cyclic/)
 
 Project Link: [https://github.com/Souvik-Cyclic/Stock-Screening-Tool](https://github.com/Souvik-Cyclic/Stock-Screening-Tool)
