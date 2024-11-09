@@ -4,6 +4,17 @@ All credits go to [Screener.in](https://www.screener.in) for creating the origin
 
 A web-based stock screening application that allows users to filter and analyze stocks based on various financial parameters, inspired by [Screener.in](https://www.screener.in). Built with React frontend and Go backend.
 
+## 🧪 Testing
+- The application is up and running on [https://stock-screening-tool.vercel.app](https://stock-screening-tool.vercel.app).
+
+- Please wait for 15 seconds for the application to fully connect with the backend.
+
+- Frontend is deployed on [vercel](https://vercel.com/) and backend is deployed on [render](https://render.com/).
+
+- Frontend URL: [https://stock-screening-tool.vercel.app](https://stock-screening-tool.vercel.app)
+
+- Backend API: [https://hiddenalpha-backend-api.onrender.com](https://hiddenalpha-backend-api.onrender.com)
+
 ## 📌 Features
 
 - **Advanced Stock Filtering**: Query-like interface for filtering stocks
