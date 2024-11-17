@@ -141,7 +141,7 @@ Returns the health status of the API.
 {"message":"Backend is alive"}
 ```
 
-### POST /api/screen
+### POST /filter
 Accepts screening criteria and returns filtered stocks
 ```json
 {
